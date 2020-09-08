@@ -2,12 +2,12 @@
 
 echo "args $*"
 
-if ! find $HOME/rundeck/packaging/rpmdist/RPMS/noarch/ -name '*.rpm' ; then
-	echo "rpm not found at $HOME/rundeck/packaging/rpmdist/RPMS/noarch/rundeck*.rpm"
+if ! find $HOME/rundeck/packaging/build/distributions/ -name '*.rpm' ; then
+	echo "rpm not found at $HOME/rundeck/packaging/build/distributions/rundeck*.rpm"
 	exit 2
 fi
 
-yum install -y $HOME/rundeck/packaging/rpmdist/RPMS/noarch/rundeck*.rpm 
+yum install -y $HOME/rundeck/packaging/build/distributions/rundeck*.rpm 
 
 service rundeckd start
 
